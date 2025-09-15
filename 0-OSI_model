@@ -1,2 +1,5 @@
-2
-2
+#!/usr/bin/env bash
+# Print answers for the OSI model MCQs (question 1 then question 2)
+
+printf '%s\n' 2 2
+
