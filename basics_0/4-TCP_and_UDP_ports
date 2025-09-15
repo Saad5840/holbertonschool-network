@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
-# Displays listening TCP and UDP ports with PID and program name using lsof
+# Displays listening TCP and UDP ports with the PID and program name
 
-# TCP listening sockets
-echo "Active TCP connections (only servers)"
-sudo lsof -iTCP -sTCP:LISTEN -Pn -n
-
-# UDP listening sockets
-echo -e "\nActive UDP connections (only servers)"
-sudo lsof -iUDP -Pn -n
+# Show all listening TCP/UDP sockets with PID and program name
+sudo ss -tulnp
