@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Displays all active IPv4 IP addresses on the machine, including localhost
 
-# Use ip command to list IPv4 addresses
-ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+# Use ifconfig and grep to extract IPv4 addresses
+ifconfig | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
