@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-# Displays all active IPv4 IP addresses on the machine including localhost
+# Displays all active IPv4 IP addresses on the machine, including localhost
 
-# Print localhost first
-echo "127.0.0.1"
-
-# Print other IPv4 addresses
-hostname -I | tr ' ' '\n' | grep -v '^127\.0\.0\.1$'
+# Use ip command to list IPv4 addresses
+ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
